@@ -23,11 +23,51 @@ This does mean that we cannot directly use a `combined` file as a replacement
 
 
 # Notes and Weird Stuff
+## General
+- If a file does not have a nozzle size but other do, assume it's meant for a 0.4 nozzle (or 0.4 + 0.6)
+
 ## Filament
+These are the different filament/material profiles that are built in.
+
+![material_settings.png](images/material_setting.png)
+
+Not very useful besides seeing what differences a `Generic` and other brand filament have.
+
+Covers settings under:
+- Filament
+- Cooling
+- Settings Overrides
+- Advanced
+- Multimaterial
+- Dependencies
+
+Most changes done here will be regarding flow ratio, pressure advance, filament temps...
+
+Example: `combined_generic_pla` vs `combined_bambu_pla_basic@bbl_x1c` (which should apply only to 0.4/6 nozzles are this config has separate files for 0.2)
+
+
 - For some reason P1P is split off into its own folder
-- For some reason 0.2 nozzles and 0.4/6/8 nozzle use different config, no idea why latter can be grouped up 
+- For some reason 0.2 nozzles and 0.4/6/8 nozzle use different config, no idea why latter can be grouped up
+- 0.8 nozzles sometimes have also different config files
+
 ## Machine
+These are for machine setups i.e. what nozzle you have attached to the machine
+
+![printer_settings.png](images/printer_settings.png)
+
+Covers settings under:
+- Basic Info
+- Machine Gcode
+- Multimaterial
+- Extruder
+- Motion Ability
+
+The Extruder tab is where most changes will take place as well some gcode edits
+
 ## Process
+These are for the different print/layer settings that will be used
+
+![process.png](images/process.png)
 
 # TODO
 - [ ] App for showing diffs between files
