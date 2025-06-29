@@ -222,9 +222,17 @@ These are for the different print/layer settings that will be used
 
 # TODO
 - [ ] App for showing diffs between files
+  - https://codesandbox.io/p/sandbox/jsdiffdiff2html-jrcxz?file=%2Fsrc%2FApp.js
+  - https://observablehq.com/@sam-albers/diff-tool
+  - https://github.com/kpdecker/jsdiff
+  - https://github.com/rtfpessoa/diff2html
+  - https://json-diff-viewer.lovable.app/
+- [ ] A simple one page HTML file (no react BS) that can compare the combined configs in this repo
 - [ ] Script for outputting a proper config file that deals with `inherits` and `_gcode` keys
 - [ ] Remove `inherits` in combined files
 - [ ] Get all the configs from Bambu Studio
-- [ ] Add extra info about the configs, i.e. names, weird stuff (0.2 treated differently that 0.4/6/8)
+- [x] Add extra info about the configs, i.e. names, weird stuff (0.2 treated differently that 0.4/6/8)
 - [ ] Add info on modifications needed to get one of these profiles working
 - [ ] Test out adding additional nozzle sizes to native Bambu Studio configs i.e. `BBL.json`
+- [ ] Produce a tree of the different files
+- [ ] Skip making combined diffs for files that are inbetween the tree 
