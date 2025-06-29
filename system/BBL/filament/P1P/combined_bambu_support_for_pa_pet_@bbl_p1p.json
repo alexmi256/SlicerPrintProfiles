@@ -1,0 +1,13 @@
+{
+    "compatible_printers": [
+        "Bambu Lab P1P 0.4 nozzle",
+        "Bambu Lab P1P 0.6 nozzle",
+        "Bambu Lab P1P 0.8 nozzle"
+    ],
+    "from": "system",
+    "inherits": "Bambu Support For PA/PET @base",
+    "instantiation": "true",
+    "name": "Bambu Support For PA/PET @BBL P1P",
+    "setting_id": "GFSS03_01",
+    "type": "filament"
+}
