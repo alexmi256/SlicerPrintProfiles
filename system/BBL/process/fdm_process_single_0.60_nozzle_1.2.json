@@ -1,0 +1,43 @@
+{
+    "type": "process",
+    "name": "fdm_process_single_0.60_nozzle_1.2",
+    "inherits": "fdm_process_single_common",
+    "from": "system",
+    "instantiation": "false",
+    "bridge_flow": "1",
+    "bridge_speed": [
+        "30"
+    ],
+    "initial_layer_infill_speed": [
+        "55"
+    ],
+    "initial_layer_line_width": "1.22",
+    "initial_layer_print_height": "0.6",
+    "initial_layer_speed": [
+        "35"
+    ],
+    "inner_wall_line_width": "1.22",
+    "internal_solid_infill_line_width": "1.22",
+    "layer_height": "0.60",
+    "line_width": "1.22",
+    "outer_wall_line_width": "1.22",
+    "ironing_inset": "0.61",
+    "overhang_3_4_speed": [
+        "25"
+    ],
+    "overhang_4_4_speed": [
+        "5"
+    ],
+    "sparse_infill_line_width": "1.22",
+    "skin_infill_line_width": "1.22",
+    "skeleton_infill_line_width": "1.22",
+    "sparse_infill_speed": [
+        "100"
+    ],
+    "support_line_width": "1.22",
+    "top_surface_line_width": "1.22",
+    "top_surface_pattern": "monotonic",
+    "top_surface_speed": [
+        "150"
+    ]
+}

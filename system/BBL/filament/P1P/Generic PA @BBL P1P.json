@@ -1,0 +1,16 @@
+{
+    "type": "filament",
+    "name": "Generic PA @BBL P1P",
+    "inherits": "Generic PA @base",
+    "from": "system",
+    "setting_id": "GFSN98_10",
+    "instantiation": "true",
+    "fan_cooling_layer_time": [
+        "60"
+    ],
+    "compatible_printers": [
+        "Bambu Lab P1P 0.4 nozzle",
+        "Bambu Lab P1P 0.6 nozzle",
+        "Bambu Lab P1P 0.8 nozzle"
+    ]
+}
