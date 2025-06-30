@@ -21,6 +21,13 @@ Another thing it does is split up any values that come from a `_gcode` key.
 This is done so that we can more easily compare gcodde commands as they will now be listed line by line.
 This does mean that we cannot directly use a `combined` file as a replacement
 
+# Usage
+## https://json-diff-viewer.lovable.app/
+Use https://json-diff-viewer.lovable.app/ to compare the configurations that `create_combined_files.py` creates.
+For now, I've excluded filaments from the comparables just because there are so many 
+
+## create_combined_files.py
+Run this script to generate all the `combined_*` files
 
 # Notes and Weird Stuff
 ## General
@@ -221,7 +228,7 @@ These are for the different print/layer settings that will be used
 ![process.png](images/process.png)
 
 # TODO
-- [ ] App for showing diffs between files
+- [x] App for showing diffs between files
   - https://codesandbox.io/p/sandbox/jsdiffdiff2html-jrcxz?file=%2Fsrc%2FApp.js
   - https://observablehq.com/@sam-albers/diff-tool
   - https://github.com/kpdecker/jsdiff

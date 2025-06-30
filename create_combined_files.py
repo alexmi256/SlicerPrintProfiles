@@ -33,6 +33,7 @@ def load_inherited_attributes(current_config, current_config_name='root'):
 
 
 json_paths = {x.stem: x for x in Path('system/BBL').glob("**/*.json") if 'combined' not in x.stem}
+files_for_diff_viewer = []
 
 for json_path in json_paths.values():
     with open(json_path) as machine_json_file:
@@ -52,30 +53,22 @@ for json_path in json_paths.values():
                         logger.error(f'Config object had a "_gcode" key with a value that was neither a string or list of strings')
 
             if 'inherits' in fully_loaded_config:
-                combined_file_name = json_path.parent.joinpath('combined_' + json_path.stem.lower().replace(' ', '_') + json_path.suffix)
-                logger.debug(f'Combined file path will be: {combined_file_name}')
-                with open(combined_file_name, 'w') as combined_json_file:
-                    logger.debug(f'Writing combined file to "{combined_file_name}"')
+                combined_file_name = 'combined_' + json_path.stem.lower().replace(' ', '_') + json_path.suffix
+                combined_file_path = json_path.parent.joinpath(combined_file_name)
+                logger.debug(f'Combined file path will be: {combined_file_path}')
+                with open(combined_file_path, 'w') as combined_json_file:
+                    logger.debug(f'Writing combined file to "{combined_file_path}"')
                     json.dump(fully_loaded_config, combined_json_file, indent=4, sort_keys=True)
-                    logger.debug(f'Writing combined file to "{combined_file_name}" success')
+                    logger.debug(f'Writing combined file to "{combined_file_path}" success')
+                    value_name = f'https://raw.githubusercontent.com/alexmi256/SlicerPrintProfiles/refs/heads/main/{combined_file_path}'
+                    label_name = combined_file_name
+                    if 'filament' not in str(combined_file_path):
+                        files_for_diff_viewer.append(f"{{ value: '{value_name}', label: '{label_name}' }},")
             else:
                 logger.debug(f'Skipping output for parent machine: {json_path.stem}')
         except JSONDecodeError as e:
             logger.error(f'Could not load "{json_path}" as json: {e}')
             continue
 
-
-# # config_path = Path('system/BBL/machine/Bambu Lab P1S 0.8 nozzle.json')
-# config_path = Path('system/BBL/process/0.24mm Draft @BBL X1C.json')
-# with open(config_path) as f:
-#
-#     # special keys in machine:
-#     # inherits
-#     d = json.load(f)
-#     fully_loaded_config = load_inherited_attributes(d, config_path.stem)
-#     # pprint(fully_loaded_config)
-#
-#     for k, v in fully_loaded_config.items():
-#         if k.endswith('_gcode'):
-#             fully_loaded_config[k] = v.split('\n')
-#     print(json.dumps(fully_loaded_config, indent=4, sort_keys=True))
+for js_code_for_diff_viewer in sorted(files_for_diff_viewer):
+    print(js_code_for_diff_viewer)
